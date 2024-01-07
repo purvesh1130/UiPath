@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UiPath AITR</title>
+    <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+    <style>
+
+
+        *{
+
+            font-family: 'Alata';
+            scroll-behavior: smooth;
+        }
+        
+
+        body{
+
+            height: 100vh;
+            width: 100vw;
+            padding: 0%;
+            margin: 0%;
+            background-color: black;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .parent_container{
+
+            height: 200%;
+            overflow: visible;
+            scroll-behavior: smooth;
+
+        }
+
+        .container{
+
+            height: 100%;
+            width: 90vw;
+            margin-top: 1.05%;
+            /* border: 1.9px solid white; */
+            position: static;
+            top: 0%;
+
+        }
+
+        
+        @media (max-width:640px) {
+
+            .container,.parent_container{
+                max-width: 640px;
+            }
+
+            .navbar .navlist{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            list-style: none;
+            gap: 25px;
+            font-size: 14px;
+        }
+
+        
+        .heading{
+
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            line-height: 105%;
+        }
+
+        }
+
+           @media (max-width:1000px) {
+
+            .container,.parent_container{
+                max-width: 1000px;
+            }
+
+        }
+
+           @media (max-width:420px) {
+
+            .container,.parent_container{
+                max-width: 420px;
+            }
+
+        }
+
+        @media (max-width:768px) {
+
+            body{
+
+                width: 600px;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+            }
+            .container,.parent_container{
+                max-width: 768px;
+            }
+
+                .member1{
+
+                font-size: 11px;
+                
+            }
+
+            #founding_member{
+
+                font-size: 21px;
+            }
+
+          
+            .mainmember{
+
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .memberspan1{
+
+            font-size: 23px;
+            text-align: center;
+            background-color: orangered;
+            border-radius: 15px;
+            box-shadow: 1px 1px 3px 1px orangered;
+            color: white;
+            font-weight: bolder;
+            transition: all 0.24s ease-in 0.01s;
+        }
+          
+        }
+
+        .header{
+
+            width: 100%;
+            height: 80px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            /* justify-content: space-between; */
+            gap: 365px;
+            color: orangered;
+            margin-top: 0%;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+
+        }
+
+
+
+        .heading{
+
+            display: flex;
+            flex-direction: column;
+            font-size: 24px;
+            line-height: 105%;
+        }
+
+        .logoheading{
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            margin-left: 1.3%;
+            font-weight: bolder;
+        }
+
+
+        #logo{
+
+            height: 55px;
+            width: 55px;
+            transition: all 0.3s ease-out 0s;
+        }
+
+        #logo:hover{
+
+            height: 60px;
+            width: 60px;
+            box-shadow: 1px 1px 5.5px 0.6px;
+        }
+
+        .navbar .navlist{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            list-style: none;
+            gap: 85px;
+            font-size: 24px;
+        }
+
+        .li{
+            padding: 0px 4px;
+            transition: all 0.18s ease-in 0s;
+            border-radius: 5px;
+        }
+
+        .li:hover{
+            /* transition: all 0.18s ease-in 0s;
+            border-radius: 5px; */
+            color: white;
+            box-shadow: 1px 1px 5px 1px orangered;
+            transform: scale(1.1);
+            padding: 0px 4px;
+            transition: all 0.18s ease-in 0s;
+
+
+        }
+
+          .li a{
+
+            color: orangered;
+            text-decoration: none;
+        }
+
+         .li a:hover{ 
+            color: white;
+
+        } 
+
+
+        .li:hover{
+
+            color: black;
+            transform: scale(1.1);
+            box-shadow: 1px 1px 5px 1px orangered;
+        } */
+
+        .navbar{
+
+            margin-right: 3%;
+        }
+
+        .span2{
+
+            padding: 1px 10px;
+            border: 2px solid orangered;
+            border-radius: 5px;
+            color: white;
+            transition: all 0.3s ease-in 0.02s;
+        }
+
+        .span2:hover{
+
+            background-color: orangered;
+            color: white;
+            animation: move 3s ease-in-out 0.3s 1;
+        }
+
+        @keyframes move {
+
+            30%{
+
+                z-index: -1;
+                translate: 0% -100%;
+                background-color: white;
+                color: white;
+            }
+
+            50%{
+
+            translate: 0% -100%; 
+            }
+
+        
+            
+        }
+
+        .intro{
+
+            /* height: 400px; */
+            width: 95%;
+            height: 120%;
+            background-color: black;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 150px;
+            align-items: center;
+            position: static;
+            top: 0%;
+        }
+
+        .section1{
+
+            
+            width: 100%;
+            margin-top: 15%;
+            display: flex;
+            justify-content: center; 
+            color: white;
+            position: static;
+            z-index: 0;
+        }
+
+        .aitr{
+
+            height: 150%;
+            /* border: 2px solid white; */
+            font-size: 110px;
+            font-weight: bolder;
+            /* line-height: 106%; */
+            scroll-behavior: smooth;
+            position: static; 
+            top: 50%; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            /* align-items: center;   */
+            
+        }
+
+        #span3{
+
+            height: 200px;
+            width: fit-content;
+            opacity: 1;
+            margin-top: 15%;
+            position: sticky;
+            top: 25%;
+            translate: 0% -40%;
+        }
+
+        #span3 img{
+
+            height: 115px;
+            width: 120px;
+        }
+
+
+        #span4{
+            height: 200px;
+            margin-top: 25%;
+            width: fit-content;
+            /* opacity: 1; */
+            position: sticky;
+            top: 32%;
+            translate: 0% -2%;
+
+        }       
+
+
+        #span5{
+
+            height: 200px;
+            width: fit-content;
+            opacity: 1;
+            position: sticky;
+            margin-top: 64%;
+            top: 48%;
+            color: white;
+            translate: 0% 52%;
+        }
+     
+        .introimg{
+
+            height: 20%;
+            position: sticky;
+            margin-top: 19%;
+            top: 18%;
+            font-size: 22px;
+        }
+
+        #introduction{
+
+            font-size: 30px;
+            border: 2px solid orangered;
+            padding: 6px;
+            background-color: orangered;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease-out 0.05s;
+            box-shadow: 1px 1px 3px 1px;
+
+        }
+
+        #introduction:hover{
+
+            transform: scale(1.04);
+            position: relative;
+            background-color: white;
+            color: orangered;
+        }
+
+
+        .highlight{
+            color: orangered;
+        }
+
+        .section2{
+
+           
+            margin-top: 8%;
+            height: 210vh;
+            width: 100%;
+            box-sizing: border-box;
+            
+        }
+
+        .member{
+
+            
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .foundingmember{
+           
+            height: 20%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            gap: 5px;
+        }
+
+        #founding_member{
+
+            height: 18%;
+            width: 35%;
+            color: white;
+            background-color: orangered;
+            border: 2px solid orangered;
+            border-radius: 15px;
+            transition: all 0.3s ease-out 0.05s;
+            box-shadow: 1px 1px 1.5px 0.15px white;
+            font-size: 30px;
+            text-align: center;
+            padding: 7px;
+        }
+
+        #founding_member:hover{
+
+            transform: scale(1.04);
+            position: relative;
+            background-color: white;
+            color: orangered;
+
+        }
+
+        .foundingmember p{
+
+            font-size: 25px;
+            color: white;
+            margin-top: -14px;
+            
+        
+        }
+
+        .member_detail{
+
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 35px;
+            /* background-color: aqua; */
+        }
+
+        .mainmember{
+            
+            height: 55%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .member1{
+
+            height: 100%;
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: white;
+            border-radius: 15px;
+   
+
+        }
+
+        .member1 img{
+            transition: all 0.13s ease-in-out 0.02s;
+        }
+
+        .member1 img:hover{
+
+            transform: scale(1.05);
+            border: 2px solid white;
+
+        }
+
+        .memberspan1{
+
+            font-size: 27px;
+            text-align: center;
+            background-color: orangered;
+            border-radius: 15px;
+            box-shadow: 1px 1px 3px 1px orangered;
+            color: white;
+            font-weight: bolder;
+            transition: all 0.24s ease-in 0.01s;
+        }
+
+        .memberspan1:hover{
+
+            translate: 0% -20%;
+            transform: scale(1.02);
+            border-top-right-radius: 0px;
+            border-top-left-radius: 0px;
+            color: white;
+            box-shadow: 1px 1px 3px 1px black,3px 2px -3px 1px black;
+        }
+
+        .memberspan2{
+
+            font-size: 23px;
+            text-align: center;
+            margin-top: 12px;
+        }
+        
+        .teammember{
+
+            height: 35%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .mimg{
+
+            height: 95%;
+            width: 100%;
+            border: 3px solid orangered;
+            border-radius: 15px;
+        }
+
+       .member1 .memberspan1{
+        margin-top: 19px;
+        padding: 8px 0px;
+       }
+
+       #mimg1{
+
+        height: 66%;
+       }
+
+
+       .teammember{
+            
+            height: 55%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .section3{
+
+            height: 380vh;
+            width: 100%;
+            box-sizing: border-box;
+            /* border: 1px solid white; */
+            margin-top: 6%;
+        }
+
+        .community{
+
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+
+        .focus1{
+            
+            height: 40%;
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4%;
+        }
+
+        .focus1content{
+
+            height: 100%;
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 25px;
+
+        }
+
+        .focus1content h3{
+
+            height: fit-content;
+            width: fit-content;
+            margin-left: 50%;
+            padding: 5px;
+            font-size: 35px;
+            font-weight: bolder;
+            background-color: white;
+            color: orangered;
+            /* border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px; */
+            text-align: end;
+            transition: all 0.61s ease-out 0.03s;
+        }
+
+        .focus1content h3:hover{
+
+            background-color: orangered;
+            color: white;
+            translate: -109% 0%;
+            transform: scale(1.1);
+            box-shadow: 2px 1px 5px 2px orangered;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+
+        .contentimg{
+
+            width: 60%;
+            height: 100%;
+
+        }
+
+
+        .contentimg img{
+
+            width: 90%;
+            height: 100%;
+            border: 2px solid black;
+            box-sizing: border-box;
+            transition: all 0.21s ease-out 0.03s;
+
+        }
+
+        .contentimg img:hover{
+
+            transform: scale(1.03);
+            border-radius: 15px;
+            box-shadow: 1px 1px 3px 1.2px orangered;
+
+        }
+
+        .focus2{
+
+            height: 40%;
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 6%;
+        }
+
+          .focus2content{
+
+            height: 100%;
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 25px;
+
+        }
+
+        .focus2content h3{
+
+            height: fit-content;
+            width: fit-content;
+            padding: 5px;
+            font-size: 35px;
+            font-weight: bolder;
+            background-color: white;
+            color: orangered;
+            /* border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px; */
+            transition: all 0.61s ease-out 0.03s;
+        }
+
+        .focus2content h3:hover{
+
+            background-color: orangered;
+            color: white;
+            translate: 69% 0%;
+            transform: scale(1.1);
+            box-shadow: 2px 1px 5px 2px orangered;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+
+        #focus3content h3{
+                  
+            margin-left: 30%;
+            
+        }
+
+        #focus3content h3:hover{
+                  
+            translate: -45% 0%;
+            background-color: orangered;
+            color: white;
+                  
+         }
+
+         #focus4content h3:hover{
+                  
+            translate: 16% 0%;
+            background-color: orangered;
+            color: white;
+                        
+         }
+
+        #focus5content h3{
+                  
+            margin-left: 16.5%;
+            
+        }
+         #focus5content h3:hover{
+                  
+            translate: -18% 0%;
+            background-color: orangered;
+            color: white;
+                        
+         }
+
+        #focus6content h3:hover{
+                  
+            translate: 48.5% 0%;
+            background-color: orangered;
+            color: white;
+                        
+         }
+
+         .section4{
+            
+            height: 180vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            /* border: 2px solid white; */
+            
+         }
+
+         .events{
+
+            width: 100%;
+            height: 100%;
+            /* border: 4PX SOLID white; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+         }
+
+         .event1{
+
+            height: 55%;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+         }
+
+         .event1 h3{
+
+            height: fit-content;
+            width: 47%;
+            text-align: center;
+            border: 2px solid orangered;
+            color: white;
+            font-size: 32px;
+            padding: 5px;
+            border-radius: 15px;
+            transition: all 0.23s ease 0.02s;
+         }
+
+         .event1 h3:hover{
+
+            translate: 0% 87%;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            background-color: orangered;
+            border: 2px solid black;
+         }
+
+         .event1content{
+
+            height: 90%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 21px;
+         }
+
+         .event1content img{
+
+            width:48%;
+            height: 90%;
+            transition: all 0.25s ease-in-out 0.03s;
+         }
+
+         .event1content img:hover{
+
+            border: 2px solid orangered;
+            box-shadow: 1px 1px 3px 1px orangered;
+            border-radius: 11px;
+            transform: scale(1.05);
+
+         }
+
+         .event1content p{
+
+            font-size: 25px;
+            width:50%;
+            height: 90%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+         }
+
+         #event2{
+
+            margin-top: 5%;
+         }
+
+
+         #event2 h3{
+
+            margin-left: 52%;
+         }
+        
+         .section5{
+
+            margin-top: 8%;
+            height: 175vh;
+            width: 100%;
+            /* border: 1px solid white; */
+         }
+
+         .personal{
+
+            height: 100%;
+            width: 100%;
+            position: relative;
+
+         }
+
+         #leftbio{
+
+            padding: 0%;
+            height: fit-content;
+            width: fit-content;
+            font-size: 20px;
+            transition: all 0.5s ease-in 0.06s;
+            z-index: -1;
+            position: absolute;
+          
+            /* backface-visibility: hidden;
+            overflow: hidden; */
+            margin-top: -99%;
+            margin-left: 4%;
+            opacity: 0;
+            overflow: hidden;
+         }
+
+        
+
+        #bio:hover #leftbio{
+
+            opacity: 1;
+            padding: 15px;
+            translate: 105% 0%;
+            background-color: white;
+            color: orangered;
+            border-radius: 15PX;
+
+        }
+
+         #rightbio{
+
+            padding: 0%;
+            height: fit-content;
+            width: fit-content;
+            font-size: 20px;
+            transition: all 0.5s ease-in 0.06s;
+            z-index: -1;
+            position: absolute;
+          
+            /* backface-visibility: hidden;
+            overflow: hidden; */
+            margin-top: -99%;
+            margin-right: 4%;
+            opacity: 0;
+            overflow: hidden;
+         }
+
+         #bio:hover #rightbio{
+
+            opacity: 1;
+            padding: 15px;
+            translate: -105% 0%;
+            background-color: white;
+            color: orangered;
+            border-radius: 15PX;
+
+        }
+
+        #bio{
+            position: relative;
+        }
+
+        .name{
+
+            font-size: 38px;
+            color: black;
+        }
+
+        .currentteam{
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .currentmember{
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .teammember1{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 5%;
+        }
+
+        .section6{
+
+ 
+            height: 130vh;
+            width: 100%;
+            margin-top: -1%;
+            /* border: 1px solid white; */
+        }
+
+        #conclusion{
+
+            width: 80%;
+            margin-top: 2%;
+        }
+
+
+        .section7{
+
+            margin-top: 3%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 130vh;
+            width: 100%;
+            /* border: 1px solid white; */
+            
+            
+        }
+
+        .socialmedia{
+
+            /* margin-top: -5.5%; */
+           height: 35%;
+            width: 80%;
+            /* border: 1px solid white; */
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-around; */
+            align-items: center;
+            gap: 10%;  
+        }
+
+        .social{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10%;
+            /* width: fit-content; */
+            width: 45%;
+            height: fit-content;
+            border: 1px solid white;
+            color: orangered;
+            background-color: white;
+            border-radius: 14px;
+            padding: 7px 0px;
+            transition: all 0.20s ease-in-out 0.03s;
+            
+        }
+
+        .social:hover{
+
+            transform: scale(1.05);
+            background-color: white;
+            color: black;
+        }
+
+        .social:hover span a{
+
+            color: orangered;
+        }
+
+        .social:hover span i{
+
+            color: orangered;
+        }
+
+
+        .social span{
+
+           font-size: 27px;
+           font-weight: bolder;
+
+        }
+
+        .social span i{
+
+            color: black;
+        }
+      
+
+        .social span a{
+
+            color: black;
+        }
+
+
+
+        .tq{
+
+            margin-top: 11%;
+            
+        }
+        .tq #tqspan2{
+
+            color: orangered;
+            font-size: 46px;
+            margin-top: 5%;
+        }
+
+        .tq #tqspan1{
+
+            color: white;
+        }
+
+        @media (max-width:640px)
+        {
+            .member1{
+
+                font-size: 5px;
+                
+            }
+
+            #founding_member{
+
+                font-size: 22px;
+                padding: 0px 40px;
+            }
+
+            .mainmember{
+
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+            }
+
+              .memberspan1{
+
+            font-size: 17px;
+            text-align: center;
+            background-color: orangered;
+            border-radius: 15px;
+            box-shadow: 1px 1px 3px 1px orangered;
+            color: white;
+            font-weight: bolder;
+            transition: all 0.24s ease-in 0.01s;
+        }
+                 
+        }
+        
+    </style>
+</head>
+<body>
+
+  <div class="parent_container">
+    <div class="container">
+        <div class="header">
+            <div class="logoheading">
+
+                <div class="logo">
+                  <img src="Vector2.png" alt="Logo" id="logo">
+                </div>
+
+                <div class="heading">
+                    <span class="span1">UiPath</span>
+                    <span class="span2">AITR</span>
+                </div>
+
+            </div>
+
+            <div class="navbar">
+                <ul class="navlist">
+                    <li class="li">
+                        <a href="#paragraph">Home</a>
+                    </li>
+                    <li class="li">
+                        <a href="#paragraph">About</a>
+                    </li>
+                    <li class="li">
+                        <a href="#events">Events</a>
+                    </li>
+                    <li class="li">
+                        <a href="#community">Community</a>
+                    </li>
+                    <li class="li">
+                        <a href="#social">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <main>
+
+            <section class="section1" id="section1" >
+
+                <div class="intro" id="intro">
+
+                     <div class="aitr" id="aitr">
+                        <span id="span3" class="span">
+                            <span class="highlight">U</span>iPath<img src="Vector2.png" alt="Logo" id="logo1">
+                        </span>
+                        <span id="span4" class="span">
+                            <span class="highlight">C</span>ommunity,</span>
+                        <span id="span5" class="span">
+                            <span class="highlight">A</span>ITR</span>
+                     </div>
+
+                     <div class="introimg">
+                        <!-- <img src="RGB.png" alt="introimage"> -->
+
+                        <h3 id="introduction">Introduction</h3>
+                        <span>
+                            <p id="paragraph">
+                                The UiPath Student Community at AITR was established in the year 2022 with the aim of fostering knowledge and skills in the field of Robotic Process Automation (RPA). Led by dedicated individuals, this community has grown steadily and has become a hub for students interested in UiPath and RPA technologies.
+                            </p>
+                        </span>                        
+
+                     </div>
+                </div>
+            
+            </section>
+
+            <section class="section2">
+                <div class="member">
+                    <div class="foundingmember">
+                        <h3 id="founding_member">Founding Members</h3>
+                        <p>The community's foundation was laid by a group of dedicated individuals, the founding members :</p>
+                   </div>
+                    <div class="member_detail">
+                         <div class="mainmember">
+
+                             <div class="member1">
+                                <img src="https://img-c.udemycdn.com/user/200_H/25854888_886b.jpg" alt="" class="mimg" id="mimg1">
+                                <span class="memberspan1">Prof. Narendra Pal Sir </span>
+                                <span class="memberspan2">(Faculty Coordinator)</span>
+                             </div>
+
+                             <div class="member1">
+                                <img src="https://media.licdn.com/dms/image/D4D03AQHWQ3FzxiPMmQ/profile-displayphoto-shrink_800_800/0/1675270296218?e=1707955200&v=beta&t=RDugbQ4RFWcsWnEO1_abcJVfZhiZMXcqBWZOk0uc_MM" alt="" class="mimg">
+                                <span class="memberspan1">Priyansh Gupta</span>
+                                <span class="memberspan2">(Student Developer Champion)</span>
+                             </div>
+
+                         </div>  
+                         
+                         <div class="teammember">
+
+                            <div class="member1">
+                                <img src="https://media.licdn.com/dms/image/D5603AQF2M__yb4fvfw/profile-displayphoto-shrink_400_400/0/1694921827828?e=1707955200&v=beta&t=p-647QRdI91LaHglK4cDf4IeFBJoJrYT1apYhIoRalo" alt="" class="mimg">
+                                <span class="memberspan1">Tanay Patil</span>
+                                <span class="memberspan2">(Founding Member)</span>
+                             </div>
+
+                             
+                             <div class="member1">
+                                <img src="https://media.licdn.com/dms/image/D4D03AQEERzV4HJGjaA/profile-displayphoto-shrink_800_800/0/1699282223000?e=1707955200&v=beta&t=fWhmPXhy8Oo8YBxc1MSu9pCFKHQiB7CLEueVnTvHt80" alt="" class="mimg">
+                                <span class="memberspan1">Khushi Meghani </span>
+                                <span class="memberspan2">(Founding Member)</span>
+                             </div>
+                             
+
+                         </div>
+
+                         <div class="teammember">
+
+                            <div class="member1">
+                                <img src="https://media.licdn.com/dms/image/D4D03AQFbLYC7nDAFGw/profile-displayphoto-shrink_800_800/0/1687587324362?e=1707955200&v=beta&t=hJ-juZntB06MYt1MfYelDHSwCYEYDtvsgDBGDEPglaw" alt="" class="mimg" id="mimg5">
+                                <span class="memberspan1">Somnath Tyagi</span>
+                                <span class="memberspan2">(Founding Member)</span>
+                             </div>
+
+                             <div class="member1">
+                                <img src="" alt="" class="mimg">
+                                <span class="memberspan1">Satwik Tiwari</span>
+                                <span class="memberspan2">(Founding Member)</span>
+                             </div>
+
+                         </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="section3">
+
+                <div class="community" id="community">
+                        <div class="foundingmember">
+                            <h3 id="founding_member">Community Focus</h3>
+                            <p>The UiPath Student Community at AITR centers its activities on :</p>
+                       </div>
+
+                       <div class="focus1" id="focus1">
+                            <div class="focus1content">
+                                <h3>RPA Education</h3>
+                                <p>Providing hands-on learning experiences & workshops to equip students with practical skills in Robotic Process Automation (RPA), with a focus on UiPath.</p>
+                            </div>
+
+                            <div class="contentimg">
+                                <img src="https://lumeniaconsulting.com/sites/default/files/inline-images/Robotic-Process-Automatisation_w_i_0.jpg" alt="">
+                            </div>
+                       </div>
+
+                       <div class="focus2" id="focus2">
+
+                         <div class="contentimg">
+                            <img src="https://images.pexels.com/photos/5926382/pexels-photo-5926382.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                         </div>
+                         <div class="focus2content">
+                            <h3>Skill Development</h3>
+                            <p>Emphasizing coding challenges, project work, and simulations to enhance members' proficiency in RPA technologies, ensuring they are job-ready.</p>
+                         </div>
+
+                       </div>
+
+                    <div class="focus1" id="focus3">
+                        <div class="focus1content" id="focus3content">
+                            <h3>Industry Integration</h3>
+                            <p>Fostering collaborations with industry professionals through guest lectures, industry visits, and networking events to bridge the gap between academia and real-world applications.</p>
+                        </div>
+
+                        <div class="contentimg">
+                            <img src="https://images.pexels.com/photos/3862632/pexels-photo-3862632.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                        </div>
+                   </div>
+
+                   
+                   <div class="focus2" id="focus4">
+
+                     <div class="contentimg">
+                       <img src="https://images.pexels.com/photos/7868832/pexels-photo-7868832.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                     </div>
+                     <div class="focus2content" id="focus4content">
+                       <h3>Project-Based Learning</h3>
+                       <p>Encouraging members to engage in real-world projects, promoting creativity and problem-solving skills through hands-on experiences.</p>
+                     </div>
+
+                   </div>
+
+                   <div class="focus1" id="focus5">
+                    <div class="focus1content" id="focus5content">
+                        <h3>Community Engagement</h3>
+                        <p>Cultivating a strong sense of community through meetups, forums, & collaborative projects, facilitating knowledge exchange & entorship among members.</p>
+                    </div>
+
+                    <div class="contentimg">
+                        <img src="https://images.pexels.com/photos/3280130/pexels-photo-3280130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                    </div>
+                   </div>
+
+                  <div class="focus2" id="focus6">
+
+                    <div class="contentimg">
+                      <img src="https://images.pexels.com/photos/8728560/pexels-photo-8728560.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                    </div>
+                    <div class="focus2content" id="focus6content">
+                      <h3>Continuous Learning</h3>
+                      <p>Promoting a culture of continuous learning by keeping members updated on the latest RPA advancements, trends, and industry best practices through newsletters and webinars.</p>
+                    </div>
+
+                  </div>
+                </div>
+
+            </section>
+
+            <section class="section4">
+
+                <div class="events" id="events">
+                    <div class="foundingmember">
+                        <h3 id="founding_member" class="event">Events</h3>
+                        <p>Amazing Events which enhances your Knowledge about RPA Technology :</p>
+                   </div>
+
+                   <div class="event1">
+                        <h3>RPA Introduction</h3>
+                        <div class="event1content">
+                            <img src="https://www.datamation.com/wp-content/uploads/2023/02/top-15-robotic-process-automation-rpa-companies.jpg" alt="">
+                            <p>The "RPA Introduction" event served as a stepping stone for students who were new to Robotic Process Automation. Practical demonstrations and hands-on sessions allowed participants to get a firsthand experience of creating simple automation workflows using UiPath Studio.</p>
+                        </div>
+                   </div>
+
+                   <div class="event1" id="event2">
+                    <h3>Hack A Bot</h3>
+                    <div class="event1content">
+                        
+                        <p>"Hack A Bot" was an exciting and competitive event that brought out the creative and problem-solving skills of the participants. Teams were challenged to design and implement innovative bots to solve specific business scenarios. The event not only tested technical proficiency but also encouraged collaboration and teamwork among the participants. The judging criteria included functionality, efficiency, and the overall impact of the developed bots on process automation.
+                        </p>
+
+                        <img src="https://images.pexels.com/photos/5926379/pexels-photo-5926379.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                    </div>
+                   </div>
+                </div>
+            </section>
+
+            <section class="section5"> 
+                    
+                <div class="currentteam">
+                    <div class="foundingmember">
+                        <h3 id="founding_member">Current Team</h3>
+                        <p>As the community progresses into the year 2023, there have been some changes in leadership roles :</p>
+                   </div>
+                    
+                   <div class="currentmember">
+
+                    <div class="teammember1">
+
+                         
+                        <div class="member1" id="bio">
+                           <div class="personal">
+                               <img src="https://media.licdn.com/dms/image/D4D03AQEERzV4HJGjaA/profile-displayphoto-shrink_800_800/0/1699282223000?e=1707955200&v=beta&t=fWhmPXhy8Oo8YBxc1MSu9pCFKHQiB7CLEueVnTvHt80" alt="" class="mimg">
+                               <span id="leftbio">
+                                   <span class="name">Khushi Meghani</span> has taken on the role of the Student Developer Champion, continuing the legacy of leadership within the community.
+                               </span>
+                           </div>
+                           
+                           <span class="memberspan1">Khushi Meghani </span>
+                           <span class="memberspan2">(Student Developer Champion)</span>
+                        </div>
+
+                       <div class="member1" id="bio">
+                          <div class="personal">
+                              <img src="https://media.licdn.com/dms/image/D5603AQF2M__yb4fvfw/profile-displayphoto-shrink_400_400/0/1694921827828?e=1707955200&v=beta&t=p-647QRdI91LaHglK4cDf4IeFBJoJrYT1apYhIoRalo" alt="" class="mimg">
+                              <span id="rightbio"><span class="name">Tanay Patil</span>  has taken up the position of Web Lead, overseeing the community's online presence and technological aspects.</span>
+                           </div>
+                           <span class="memberspan1">Tanay Patil</span>
+                           <span class="memberspan2">(Web Lead)</span>
+                        </div>
+
+                    </div>
+
+                    <div class="teammember1">
+
+                       <div class="member1" id="bio">
+                           <div class="personal">
+                               <img src="https://media.licdn.com/dms/image/D4D03AQFbLYC7nDAFGw/profile-displayphoto-shrink_800_800/0/1687587324362?e=1707955200&v=beta&t=hJ-juZntB06MYt1MfYelDHSwCYEYDtvsgDBGDEPglaw" alt="" class="mimg">
+                               <span id="leftbio">
+                                   <span class="name">Satwik Tiwari</span> has transitioned into the role of Trainer Head, responsible for organizing training sessions and workshops.
+                               </span>
+                           </div>
+                           
+                           <span class="memberspan1">Satwik Tiwari</span>
+                           <span class="memberspan2">(Trainer Head)</span>
+                        </div>
+
+
+                        <div class="member1" id="bio">
+                           <div class="personal">
+                               <img src="https://media.licdn.com/dms/image/D4D03AQFbLYC7nDAFGw/profile-displayphoto-shrink_800_800/0/1687587324362?e=1707955200&v=beta&t=hJ-juZntB06MYt1MfYelDHSwCYEYDtvsgDBGDEPglaw" alt="" class="mimg">
+                               <span id="rightbio"><span class="name">Somnath Tyagi</span> is now the Creatives Lead, focusing on the visual and creative aspects of the community's content.</span>
+                            </div>
+                            <span class="memberspan1">Somnath Tyagi</span>
+                            <span class="memberspan2">(Creatives Lead)</span>
+                         </div>
+
+
+                    </div>
+
+                   </div>
+                </div>
+
+            </section>
+
+            <section class="section6">
+
+
+                <div class="conclusion">
+
+                    <div class="foundingmember">
+                        <h3 id="founding_member">Conclusion</h3>
+                        <p id="conclusion">In conclusion, the UiPath Student Community at AITR stands as a testament to the collaborative spirit and passion for technology among its members. Since its establishment in 2022, the community has evolved into a vibrant hub of learning and innovation, driven by the commitment of its founding members and the dynamic leadership of Priyansh Gupta.
+
+                            The diverse range of events, including the enlightening RPA Introduction and the stimulating Hack A Bot, has not only enriched the skill sets of its members but has also fostered a culture of creativity and problem-solving. These events serve as milestones in the community's journey, marking the collective achievements and progress made in the field of Robotic Process Automation.
+                            
+                            As the baton of leadership passes to Khushi Meghani, Tanay Patil, Satwik Tiwari, and Somnath Tyagi in 2023, there is a renewed sense of enthusiasm and a commitment to building on the strong foundation laid by the founding members. Khushi Meghani, stepping into the role of Student Developer Champion, brings fresh perspectives and ideas, ensuring a seamless transition and a continued focus on excellence.
+                            
+                            Looking ahead, the community is poised for even greater accomplishments, with a dedicated web lead, a dynamic trainer head, and a creative lead steering the way. The commitment to fostering knowledge exchange, innovation, and collaboration remains at the forefront, ensuring that the UiPath Student Community at AITR continues to be a driving force in shaping the future of RPA enthusiasts.
+                            
+                            As the community embarks on new endeavors and endeavors to expand its reach, it remains grounded in its core values of inclusivity, knowledge sharing, and a passion for technology. With each member contributing their unique talents and skills, the UiPath Student Community at AITR is set to leave an indelible mark on the academic and technological landscape. The journey continues, and the future holds exciting possibilities for this dynamic and thriving community.
+                            </p>
+                   </div>
+
+                </div>
+
+            </section>
+
+            <section class="section7" id="social">
+
+                <div class="foundingmember">
+                    <h3 id="founding_member">Social Media Links</h3>
+               </div>
+
+                <div class="socialmedia">
+
+                    <div class="social">
+                        <span>Linked In 
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i> :
+                            <a href="https://www.linkedin.com/company/uipath-community-aitr">https://bit.ly/48kr17U</a>
+                        </span>
+                        
+                    </div>
+
+                    <div class="social">
+                        <span>Instagram
+                            <i class="fa fa-instagram" aria-hidden="true"></i> :
+                            <a href="https://bit.ly/3GPynEU">https://bit.ly/3GPynEU</a>
+                        </span>
+                        
+                    </div>
+
+                    <div class="social">
+                        <span>Email
+                            <i class="fa fa-envelope" aria-hidden="true"></i> :
+                            <a href="https://bit.ly/3uXKlta">https://bit.ly/3uXKlta</a>
+                        </span>
+                       
+                    </div>
+
+                    <div class="social">
+                        <span>LinkTree
+                            <i class="fa fa-link" aria-hidden="true"></i> :
+                            <a href="https://bit.ly/3tey833">https://bit.ly/3tey833</a>
+                        </span>
+                        
+                    </div>
+
+                </div>
+
+                <div class="tq">
+                    <span id="tqspan1">---------------------
+                        <span id="tqspan2">
+                            Thank You !!
+                        </span>
+                        ---------------------
+                    </span>
+                </div>
+            </section>
+        </main>
+    </div>
+  </div>
+</body>
+</html>
